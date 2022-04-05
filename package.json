@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon",
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +25,10 @@
     "nodemon": "^2.0.15",
     "pug": "^3.0.0"
   },
+  "cacheDirectories": [
+    "node_modules"
+  ],
   "engines": {
-    "node": "10.x"
+    "node": "16.x"
   }
 }
